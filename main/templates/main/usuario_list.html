@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Usuarios</h2>
+  <a href="{% url 'usuario_create' %}">Crear Usuario</a>
+  <ul>
+    {% for usuario in usuarios %}
+      <li>{{ usuario.nombre }} {{ usuario.apellido }} - 
+          <a href="{% url 'usuario_update' usuario.pk %}">Editar</a> | 
+          <a href="{% url 'usuario_delete' usuario.pk %}">Eliminar</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
