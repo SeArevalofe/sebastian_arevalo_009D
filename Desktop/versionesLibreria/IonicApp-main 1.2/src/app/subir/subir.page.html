@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="back" [routerLink]="['/']">Volver</ion-button>
+    <ion-title>subir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--Aca se subira la imagen de un libro-->
+<ion-content class="background-image" [fullscreen]="true">
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" /> 
+  </ion-card>
+  <!--para seleccionar un archivo el cual subiremos-->
+  <div class="archivo">
+  <label for="file-upload" class="custom-file-label">Subir imagen de libro</label>
+  <input class="custom-file-input" type="file">
+  </div>
+  <form action="registerform">
+    <ion-list>
+      <!--separación items-->
+      <ion-item>
+        <ion-input
+          type="text"
+          fill="solid"
+          label="Titulo"
+          labelPlacement="floating"
+          helperText="Ingrese un texto"
+          errorText="no cumple con los requisitos"
+          [(ngModel)]="titulo"
+          name="titulo"
+        ></ion-input>
+      </ion-item>
+      <!--separación items-->
+      <ion-item>
+        <ion-input
+          type="text"
+          fill="solid"
+          label="Autor"
+          labelPlacement="floating"
+          helperText="Ingrese nombre del autor"
+          errorText="Nombre invalido"
+          [(ngModel)]="autor"
+          name="autor"
+        ></ion-input>
+      </ion-item>
+      <!--separación items-->
+      <ion-item>
+        <ion-input class="date" type="number" label="Publicado" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input class="date" type="number" label="cod.referencia" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
+      </ion-item>
+      <ion-item>
+        <label for="">Sinopsis</label>
+        <textarea label="Sinopsis" name="sinopsis" id=""></textarea>
+      </ion-item>
+      
+
+      
+      <ion-button type="submit" class="agregar">Subir libro</ion-button>
+    </ion-list>
+   
+  </form>
+
+
+
+</ion-content>
+
